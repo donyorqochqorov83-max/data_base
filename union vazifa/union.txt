@@ -1,0 +1,46 @@
+-- SELECT ism, familiya 
+-- FROM talabalar
+-- WHERE ism LIKE 'A%'
+--    OR ism LIKE 'E%' 
+--    OR ism LIKE 'I%' 
+--    OR ism LIKE 'O%' 
+--    OR ism LIKE 'U%'
+-- UNION
+-- SELECT ism, familiya
+-- FROM oqtuvchilar
+-- WHERE ism LIKE 'A%'
+--    OR ism LIKE 'E%' 
+--    OR ism LIKE 'I%' 
+--    OR ism LIKE 'O%' 
+--    OR ism LIKE 'U%';
+
+-- SELECT * FROM (
+--     SELECT ism, familiya FROM talabalar
+--     UNION ALL
+--     SELECT ism, familiya FROM oqtuvchilar
+-- )
+-- ORDER BY LENGTH(familiya) ASC, familiya ASC;
+
+-- SELECT ism, familiya, 'talaba' AS manba
+-- FROM talabalar
+-- UNION
+-- SELECT ism, familiya, 'oqtuvchi' AS manba
+-- FROM oqtuvchilar
+-- ORDER BY manba, familiya;
+
+-- SELECT id, ism, familiya
+-- FROM (
+--     SELECT id, ism, familiya 
+-- 	FROM talabalar
+--     ORDER BY id DESC
+--     LIMIT 3
+-- )
+-- UNION 
+-- SELECT id, ism, familiya
+-- FROM (
+--     SELECT id, ism, familiya 
+-- 	FROM oqtuvchilar
+--     ORDER BY id DESC
+--     LIMIT 3
+-- )
+-- ORDER BY id DESC;
